@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html> 
+    <head> 
+        
+        {% block head %}
+            <title>Private Tutoring School Manager</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/teachers">Teachers</a>
+                <a href="/students">Students</a>
+            </div>
+
+        </header>
+
+       {% block content %}{% endblock %}
+
+       <footer>
+            <div class="foot">Copyright (c) 2020 Private Tutoring School. All Rights Reserved</div>
+       </footer>
+
+        <script src="/scripts.js"></script>
+
+    </body>
+</html>

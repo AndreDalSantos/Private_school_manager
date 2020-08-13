@@ -1,0 +1,151 @@
+<div class="item"> 
+                <div>Avatar URL</div>
+                <div>
+                    <input 
+                        type="url" 
+                        name="avatar_url"
+                        placeholder="http://"
+                        value="{{ student.avatar_url }}"
+                    >
+                </div>
+            </div>
+
+            <div class="item"> 
+                <div>Aluno</div>
+                <div>
+                    <input 
+                        type="text"
+                        name="name"
+                        placeholder="nome do aluno"
+                        value="{{ student.name }}"
+                    >
+                </div>
+            </div>
+
+            <div class="item"> 
+                <div>Data de nascimento</div>
+                <div>
+                    <input 
+                        type="date"
+                        name="birth"
+                        value="{{ student.birth }}"
+                    >
+                </div>
+            </div>
+
+            <div class="item"> 
+                <div>Email</div>
+                <div>
+                    <input 
+                        type="email"
+                        name="email"
+                        value="{{ student.email }}"
+                        placeholder="Email@email.com"
+                    >
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Ano escolar</div>
+                <div>
+                    <select name="grade">
+                        <span>
+                            <option 
+                                value="5ef" 
+                                {% if student.grade == "5ef"%}
+                                    selected
+                                {% endif %}
+                            >
+                                5º ano Ensino Fundamental
+                            </option>
+                        </span>
+                        <span>
+                            <option 
+                                value="6ef" 
+                                {% if student.grade == "6ef"%}
+                                    selected
+                                {% endif %}
+                            >
+                                6º ano Ensino Fundamental
+                            </option>
+                        </span>
+                        <span>
+                            <option 
+                                value="7ef" 
+                                {% if student.grade == "7ef"%}
+                                    selected
+                                {% endif %}
+                            >
+                                7º ano Ensino Fundamental
+                            </option>
+                        </span>
+                        <span>
+                            <option 
+                                value="8ef" 
+                                {% if student.grade == "8ef"%}
+                                    selected
+                                {% endif %}
+                            >
+                                8º ano Ensino Fundamental
+                            </option>
+                        </span>
+                        <span>
+                            <option 
+                                value="1em" 
+                                {% if student.grade == "1em"%}
+                                    selected
+                                {% endif %}
+                            >
+                                1º ano Ensino Médio
+                            </option>
+                        </span>
+                        <span>
+                            <option 
+                                value="2em" 
+                                {% if student.grade == "2em"%}
+                                    selected
+                                {% endif %}
+                            >
+                                2º ano Ensino Médio
+                            </option>
+                        </span>
+                        <span>
+                            <option 
+                                value="3em" 
+                                {% if student.grade == "3em"%}
+                                    selected
+                                {% endif %}
+                            >
+                                3º ano Ensino Médio
+                            </option>
+                        </span>
+                                            
+                    </select>
+                </div>
+            </div>
+
+            <div class="item"> 
+                <div>Carga horária semanal</div>
+                <div>
+                    <input 
+                        type="number"
+                        name="workload"
+                        value="{{ student.workload }}"
+                        placeholder="Carga horária semanal"
+                    >
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Professor do aluno</div>
+                <div>
+                    <select name="teacher">
+                        {% for teacher in teacherOptions %}
+                            <option value="{{teacher.id}}"
+                                {% if student.teacher_id == teacher.id %} selected {% endif %}>
+                                {{teacher.name}}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>

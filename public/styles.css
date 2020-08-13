@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #aaa0c7;
+    --secondary-color: rgb(3, 3, 3);
+    --third-color: #7c6ab1;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 32px;
+    text-align: start;
+    box-sizing: border-box;
+}
+
+.links {
+    font-size: 22px;
+}
+
+.links a + a {
+    margin-left: 32px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #777;
+    position: relative;
+}
+
+.links a.active {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.links a:hover {
+    color: var(--primary-color);
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.links a:hover::after {
+    width: 100%;    
+    transition: width 200ms cubic-bezier(1, 0.2, 0.65, 0.045);
+}
+
+/* === FOOTER === */
+footer {
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: auto;
+
+}
+
+.foot {
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+/* === CARD === */
+.card {
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+
+    margin: 50px auto;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    box-shadow: 5px 5px 3px 3px rgba(0,0,0, 0.6);
+
+    animation: up 200ms ease-out;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* details */
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.details .item:nth-child(2) {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    color: #900;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.details .item span {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    color: #aaaaaa;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/* FORM */
+input {
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px
+}
+
+button[type="submit"],
+a.button {
+    padding: 8px 32px;
+    background-color: rgb(11, 124, 199);
+    color: black;
+    border-radius: 4px;
+    margin-top: 32px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
+form .delete-button {
+    background-color: red;
+    color: white;
+    /* margin-top: 16px; */
+}
+
+/* === INDEX TEACHERS === */
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+td, th {
+    padding: 14px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+th {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr td:first-child  {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a,
+.table-container > a {
+    background-color: var(--third-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.table-container > a {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+    text-align: center;
+}
+
+/* FILTERS */
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {
+    margin: 0;
+    width: 120px;
+    color: white;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.table-container .header form input {
+    border: 1px solid #dee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.table-container .header form button {
+    margin: 0;
+    color: white;
+}
+
+/* PAGINTAION */
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    columns: var(--body-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--body-color);
+}
+
+.not-found-warning {
+    margin: 0 auto;
+    margin-top: 48px;
+    font-size: 32px;
+    color: red;
+}
