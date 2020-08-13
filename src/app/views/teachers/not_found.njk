@@ -1,26 +1,26 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="card table-container">
 
-        <div class="header">
-            <a class="button" href="/teachers/create">Novo</a>
+<div class="order-error">
+    <div class="error-lottie"></div>
+    <h2>Desculpe</h2>
+    <p>
+        Não foram encontrados professores com esstes parâmetros.
+    </p>
+    <a href="#" onclick="history.back()">Tente novamente</a>
+</div>
 
-            <form action="/teachers" method="GET">
-                <input
-                    type="text"
-                    name="filter"
-                    placeholder="Nome ou matéria"
-                    value={{filter}}
-                >
-
-                <button type="submit">Filtrar</button>
-            </form>
-        
-            <div class="not-found-warning">Nenhum resultado encontrado!</div>
-
-        </div>
-
-    </div>
+<script src="/lottie.min.js"></script>
+<script>
+    const element = document.querySelector('.error-lottie')
+    lottie.loadAnimation({
+        container: element, // the dom element that will contain the animation
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        path: '/22893-error-animation.json' // the path to the animation json
+    }).setSpeed(1.5);
+</script>
 
 {% endblock content %}

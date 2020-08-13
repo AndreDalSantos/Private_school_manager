@@ -9,7 +9,7 @@ CREATE TABLE "teachers" (
   "created_at" timestamp
 );
 
-CREATE TABLE "members" (
+CREATE TABLE "students" (
   "id" SERIAL PRIMARY KEY,
   "avatar_url" text,
   "name" text,

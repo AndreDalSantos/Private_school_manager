@@ -342,3 +342,56 @@ td:last-child {
     font-size: 32px;
     color: red;
 }
+
+/* messages */
+@keyframes hidemessage {
+    to {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
+.messages {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    position: absolute;
+    width: 100%;
+    color: white;
+    opacity: 1;
+
+    animation: hidemessage 400ms 5s ease-out forwards;
+}
+
+.messages.error {
+    background-color: #e74c3c;
+    top: 0;
+    z-index: 10;
+}
+
+.messages.success {
+    background-color: rgb(122, 182, 30);
+    top: 0;
+    z-index: 10;
+}
+
+/* lottie - success */
+.create_or_update_lottie,
+.order-error {
+    padding: 0;
+    padding-bottom: 112px;
+
+    text-align: center;
+
+    margin: auto;
+}
+
+.create_or_update_lottie .success-lottie,
+.order-error .error-lottie {
+    height: 200px;
+}
+
+.create_or_update_lottie a,
+.order-error a {
+    color: var(--secondary-color);
+}

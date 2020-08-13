@@ -1,0 +1,23 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="create_or_update_lottie">
+    <div class="success-lottie"></div>
+    <h2>Professor excluído com sucesso</h2>
+    <a href="/teachers">Voltar</a>
+</div>
+
+<script src="/lottie.min.js"></script>
+<script>
+    const element = document.querySelector('.success-lottie')
+    lottie.loadAnimation({
+        container: element, // the dom element that will contain the animation
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        path: '/7266-success.json' // the path to the animation json
+    });
+</script>
+
+{% endblock content %}
